@@ -65,7 +65,7 @@ class Game extends React.Component {
     const parentDataKey = parseInt(event.currentTarget.parentNode.getAttribute('data-key'));
     const currentDataKey = parseInt(event.currentTarget.getAttribute('data-key'));
 
-
+    if (event.currentTarget.textContent !== '') return;
 
     this.setState(state => {
       const mark = this.state.xIsNext ? '☓' : '◯';
