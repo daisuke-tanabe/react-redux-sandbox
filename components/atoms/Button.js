@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const Button = ({ className, value, onButtonClick }) => {
+const Button = ({ className, value, dataKey, onButtonClick }) => {
   return (
-    <button className={className} onClick={onButtonClick}>{value}</button>
+    <button className={className} key={dataKey} data-key={dataKey} onClick={onButtonClick}>{value ? 'X' : ''}</button>
   );
 };
 

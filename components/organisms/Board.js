@@ -8,8 +8,13 @@ const Board = ({ className, squares, onButtonClick }) => {
       <Status />
       <div className={`${className}__squares`}>
         {
-          [...Array(squares.length).keys()].map((square, index) => {
-            return <BoardRow squaresRow={squares[index]} key={index} onButtonClick={onButtonClick} />
+          squares.map(square => {
+            return <BoardRow
+              row={square.values}
+              key={square.id}
+              dataKey={square.id}
+              onButtonClick={onButtonClick}
+            />
           })
         }
       </div>
