@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Board from '../../components/organisms/Board'
+import Board from '../../assets/react/components/organisms/Board'
 
 class Game extends React.Component {
   constructor(props) {
@@ -87,17 +87,17 @@ class Game extends React.Component {
       [2, 4, 6],
     ];
 
-    const newSquares = [];
-    for (let i = 0; i < squares.length; i++) {
-      for (let j = 0; j < squares[i].values.length; j++) {
-        newSquares.push(squares[i].values[j].value);
-      }
-    }
+    const concatSquares = squares.reduce((result, { values }) => {
+      return result.concat(values.reduce((result, { value }) => {
+        result.push(value);
+        return result;
+      }, []));
+    }, []);
 
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
-      if (newSquares[a] && newSquares[a] === newSquares[b] && newSquares[a] === newSquares[c]) {
-        return newSquares[a];
+      if (concatSquares[a] && concatSquares[a] === concatSquares[b] && concatSquares[a] === concatSquares[c]) {
+        return concatSquares[a];
       }
     }
 
