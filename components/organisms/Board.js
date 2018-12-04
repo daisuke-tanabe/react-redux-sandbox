@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import BoardRow from '../molecules/BoardRow';
 import Status from '../atoms/Status';
 
-const Board = ({ className, squares, onButtonClick }) => {
+const Board = ({ className, squares, xIsNext, onButtonClick }) => {
   return (
     <div className={className}>
-      <Status />
+      <Status xIsNext={xIsNext} />
       <div className={`${className}__squares`}>
         {
           squares.map(square => {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const Status = ({ className }) => {
-  const status = 'Next player: X';
+const Status = ({ className, xIsNext }) => {
+  const status = `Next player: ${xIsNext ? '☓' : '◯'}`;
 
   return (
     <div className={className}>{status}</div>

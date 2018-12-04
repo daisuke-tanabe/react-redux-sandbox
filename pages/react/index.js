@@ -6,21 +6,22 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      xIsNext: true,
       squares: [
         {
           id: 0,
           values: [
             {
               id: 0,
-              value: false
+              value: null
             },
             {
               id: 1,
-              value: false
+              value: null
             },
             {
               id: 2,
-              value: false
+              value: null
             }
           ]
         },
@@ -29,15 +30,15 @@ class Game extends React.Component {
           values: [
             {
               id: 3,
-              value: false
+              value: null
             },
             {
               id: 4,
-              value: false
+              value: null
             },
             {
               id: 5,
-              value: false
+              value: null
             }]
         },
         {
@@ -45,15 +46,15 @@ class Game extends React.Component {
           values: [
             {
               id: 6,
-              value: false
+              value: null
             },
             {
               id: 7,
-              value: false
+              value: null
             },
             {
               id: 8,
-              value: false
+              value: null
             }]
         }
       ]
@@ -64,10 +65,14 @@ class Game extends React.Component {
     const parentDataKey = parseInt(event.currentTarget.parentNode.getAttribute('data-key'));
     const currentDataKey = parseInt(event.currentTarget.getAttribute('data-key'));
 
+
+
     this.setState(state => {
-      state.squares[parentDataKey].values.find(data => data.id === currentDataKey).value = true;
+      const mark = this.state.xIsNext ? '☓' : '◯';
+      state.squares[parentDataKey].values.find(data => data.id === currentDataKey).value = mark;
+      this.state.xIsNext = !this.state.xIsNext;
       return state;
-    })
+    });
   }
 
   componentDidUpdate() {
@@ -78,7 +83,7 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
-          <Board squares={this.state.squares} onButtonClick={this.onButtonClick.bind(this)} />
+          <Board {...this.state} onButtonClick={this.onButtonClick.bind(this)} />
         </div>
         <div className="game-info">
           <div>{/* status */}</div>

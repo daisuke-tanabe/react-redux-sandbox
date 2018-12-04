@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Button = ({ className, value, dataKey, onButtonClick }) => {
   return (
-    <button className={className} key={dataKey} data-key={dataKey} onClick={onButtonClick}>{value ? 'X' : ''}</button>
+    <button className={className} key={dataKey} data-key={dataKey} onClick={onButtonClick}>{value}</button>
   );
 };
 
