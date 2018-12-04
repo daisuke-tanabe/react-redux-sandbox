@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-const Button = ({ className, value }) => <button className={className}>{value}</button>;
+const Button = ({ className, value, onButtonClick }) => {
+  return (
+    <button className={className} onClick={onButtonClick}>{value}</button>
+  );
+};
 
 const StyledButton = styled(Button)`
   background: #fff;

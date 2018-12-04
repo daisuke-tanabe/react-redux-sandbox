@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import Button from '../atoms/Button';
 
-const BoardRow = ({ className, square }) => {
-  const values = Array.from(new Array(3)).map((v, i)=> (i + square) + (square * 2));
+const BoardRow = ({ className, squaresRow, key, onButtonClick }) => {
   return (
     <div className={className}>
       {
-        values.map(value => {
-          return <Button value={value} key={value} />
+        squaresRow.map((value, index) => {
+          return <Button value={value} key={index} onButtonClick={onButtonClick}  />
         })
       }
     </div>
