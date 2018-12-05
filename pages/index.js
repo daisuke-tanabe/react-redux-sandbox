@@ -14,6 +14,11 @@ export default () => (
           <a>react-ajax</a>
         </Link>
       </li>
+      <li>
+        <Link href="/react-redux">
+          <a>react-redux</a>
+        </Link>
+      </li>
     </ul>
   </div>
 )
