@@ -13,10 +13,15 @@
     "redux-saga": "^0.16.2",
     "styled-components": "^4.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "agreed": "^3.2.1",
+    "npm-run-all": "^4.1.5"
+  },
   "scripts": {
+    "agreed-ui": "agreed-ui --path ./assets/api/agreed.js --port 3031",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev:agreed": "agreed-server --path ./assets/api/agreed.js --port 3010",
+    "dev:next": "next",
     "build": "next build",
     "start": "next start"
   },

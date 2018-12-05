@@ -1,0 +1,52 @@
+{
+  request: {
+    path: "/api/books",
+      method: "get",
+  },
+  response: {
+    status: 200,
+      body: {
+      results: {
+        books: [
+          {
+            id: "{:books.0.id}",
+            title: "{:books.0.title}",
+            image: "{:books.0.image}",
+            startDate: "{:books.0.startDate}",
+            endDate: "{:books.0.endDate}",
+            status: "{:books.0.status}",
+          },
+          "{:books.1-last}",
+        ],
+      },
+    },
+    values: {
+      books: [
+        {
+          id: 1,
+          title: "JavaScript 第6版",
+          image: "/images/01.jpg",
+          startDate: "yyyy-mm-dd",
+          endDate: "yyyy-mm-dd",
+          status: "stock",
+        },
+        {
+          id: 2,
+          title: "エンジニアのためのGitの教科書 実践で使える！バージョン管理とチーム開発手法",
+          image: "/images/2.jpg",
+          startDate: "yyyy-mm-dd",
+          endDate: "yyyy-mm-dd",
+          status: "rented",
+        },
+        {
+          id: 3,
+          title: "体系的に学ぶ 安全なWebアプリケーションの作り方 第2版 脆弱性が生まれる原理と対策の実践",
+          image: "/images/3.jpg",
+          startDate: "yyyy-mm-dd",
+          endDate: "yyyy-mm-dd",
+          status: "rented",
+        },
+      ],
+    },
+  },
+}
