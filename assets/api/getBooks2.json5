@@ -1,6 +1,6 @@
 {
   request: {
-    path: "/api/books",
+    path: "/api/books2",
       method: "get",
   },
   response: {
@@ -25,15 +25,15 @@
       books: [
         {
           id: 1,
-          title: "JavaScript 第6版",
+          title: "本1",
         },
         {
           id: 2,
-          title: "エンジニアのためのGitの教科書 実践で使える！バージョン管理とチーム開発手法",
+          title: "本2",
         },
         {
           id: 3,
-          title: "体系的に学ぶ 安全なWebアプリケーションの作り方 第2版 脆弱性が生まれる原理と対策の実践",
+          title: "本3",
         },
       ],
     },
