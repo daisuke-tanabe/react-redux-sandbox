@@ -9,6 +9,11 @@ export default () => (
           <a>react</a>
         </Link>
       </li>
+      <li>
+        <Link href="/react-ajax">
+          <a>react-ajax</a>
+        </Link>
+      </li>
     </ul>
   </div>
 )
